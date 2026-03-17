@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja" style="background:#0a0a0a !important;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>LIMIT BREAK — 新しい自分を取り戻すBizプログラム｜3/24 無料体験会</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#0a0a0a;--bk2:#111;--bk3:#141414;--bk4:#1a1a1a;--gd:#c9a84c;--gl:#e2c97e;--gb:#f5dfa0;--gdk:#8a6d2b;--wh:#f0ece4;--wd:#b0a998;--wm:#7a7368;--se:'Cormorant Garamond',serif;--sj:'Noto Serif JP',serif;--sn:'Noto Sans JP',sans-serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{background:#0a0a0a !important}
+body{color:#f0ece4 !important;font-family:var(--sn);font-weight:300;line-height:1.8;letter-spacing:.04em;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}a{color:inherit;text-decoration:none}
+
+/* UTILITY */
+.gt{background:linear-gradient(135deg,#e2c97e,#c9a84c,#f5dfa0,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gl{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--gd),transparent);margin:0 auto}
+.sp{padding:80px 20px}
+.lb{font-family:var(--se);font-size:.65rem;font-weight:400;letter-spacing:.35em;text-transform:uppercase;color:var(--gd);text-align:center;margin-bottom:10px}
+.t{font-family:var(--sj);font-size:1.5rem;font-weight:600;text-align:center;line-height:1.7;letter-spacing:.08em;margin-bottom:32px;color:var(--wh)}
+
+/* NOISE TEXTURE */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px}
+
+/* ANIMATIONS */
+@keyframes up{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+@keyframes sh{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes pg{0%,100%{box-shadow:0 0 24px rgba(201,168,76,.15),0 0 60px rgba(201,168,76,.05)}50%{box-shadow:0 0 36px rgba(201,168,76,.35),0 0 80px rgba(201,168,76,.1)}}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes breathe{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(60px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes glowLine{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* Scroll animations */
+.ao{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}.ao.v{opacity:1;transform:translateY(0)}
+.ao-d1{transition-delay:.1s}.ao-d2{transition-delay:.2s}.ao-d3{transition-delay:.3s}.ao-d4{transition-delay:.4s}
+.ao-s{opacity:0;transform:scale(.92);transition:opacity .8s ease,transform .8s ease}.ao-s.v{opacity:1;transform:scale(1)}
+
+/* FLOATING BOTTOM CTA */
+.float-cta{position:fixed;bottom:0;left:0;right:0;z-index:999;background:linear-gradient(to top,rgba(10,10,10,.98) 70%,transparent);padding:12px 20px 20px;display:flex;align-items:center;justify-content:center;gap:12px;transform:translateY(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.float-cta.v{transform:translateY(0)}
+.float-cta-info{display:flex;flex-direction:column}
+.float-cta-date{font-family:var(--se);font-size:.72rem;letter-spacing:.1em;color:var(--gd);font-weight:600}
+.float-cta-sub{font-size:.6rem;color:var(--wm)}
+.float-cta .cta{padding:14px 32px;font-size:.82rem;white-space:nowrap}
+
+/* CTA BTN */
+.cta{display:inline-block;padding:18px 52px;background:linear-gradient(135deg,var(--gd),var(--gl) 50%,var(--gd));background-size:200% auto;color:var(--bk);font-family:var(--sj);font-size:.92rem;font-weight:700;letter-spacing:.12em;cursor:pointer;animation:pg 3s ease-in-out infinite;position:relative;overflow:hidden;border:none}
+.cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transition:left .6s ease}.cta:active::before{left:100%}
+.cta-big{padding:22px 60px;font-size:.95rem}
+.cta-s{display:block;font-size:.65rem;font-weight:400;letter-spacing:.08em;color:var(--wm);margin-top:10px}
+.cta-note{margin-top:14px;font-size:.66rem;color:var(--wm)}
+
+/* SECTION DIVIDERS */
+.sec-div{height:80px;position:relative;overflow:hidden}
+.sec-div::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:1px;height:40px;background:linear-gradient(to bottom,transparent,var(--gd),transparent);animation:glowLine 3s ease-in-out infinite}
+.sec-div-d{height:60px;display:flex;align-items:center;justify-content:center}
+.sec-div-d::before{content:'';width:8px;height:8px;background:var(--gd);transform:rotate(45deg);opacity:.4}
+
+/* ========== 1. HERO ========== */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:56px 24px 36px;overflow:hidden;background:#0a0a0a !important}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 10%,rgba(201,168,76,.1) 0%,transparent 50%),radial-gradient(ellipse at 20% 80%,rgba(201,168,76,.04) 0%,transparent 40%),radial-gradient(ellipse at 80% 70%,rgba(201,168,76,.03) 0%,transparent 35%);pointer-events:none}
+.hero::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(201,168,76,.008) 2px,rgba(201,168,76,.008) 4px);pointer-events:none}
+#particles{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hc{position:relative;z-index:2;max-width:400px}
+.hc>*{opacity:0}
+.h-ey{font-family:var(--se);font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gd);margin-bottom:24px;animation:fi 1s ease .5s forwards}
+.h-br{font-family:var(--se);font-size:3.4rem;font-weight:300;letter-spacing:.22em;line-height:1.1;margin-bottom:8px;background:linear-gradient(135deg,#e2c97e,#f5dfa0 25%,#c9a84c 50%,#f5dfa0 75%,#e2c97e);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:sh 4s ease-in-out infinite,up 1.2s cubic-bezier(.22,1,.36,1) .2s forwards}
+.h-sub{font-family:var(--se);font-style:italic;font-size:.72rem;letter-spacing:.18em;color:var(--gdk);margin-bottom:32px;animation:fi 1s ease .6s forwards}
+.h-dv{width:1px;height:40px;background:linear-gradient(to bottom,transparent,var(--gd),transparent);margin:0 auto 28px;animation:fi 1s ease .7s forwards}
+.h-shift{font-family:var(--sj);font-size:1.25rem;font-weight:700;line-height:2;letter-spacing:.08em;margin-bottom:24px;animation:slideUp 1s cubic-bezier(.22,1,.36,1) .8s forwards}
+.h-shift .em{background:linear-gradient(135deg,#e2c97e,#c9a84c,#f5dfa0,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.4rem}
+.h-copy{font-size:.82rem;font-weight:300;line-height:2.2;color:var(--wd);margin-bottom:36px;animation:fi 1.2s ease 1s forwards}
+.h-ev{background:rgba(20,20,20,.9);border:1px solid rgba(201,168,76,.3);padding:22px 20px;margin-bottom:28px;position:relative;animation:slideUp 1s cubic-bezier(.22,1,.36,1) 1.1s forwards}
+.h-ev::before{content:'FREE EVENT';position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-family:var(--se);font-size:.56rem;letter-spacing:.3em;color:var(--bk);background:linear-gradient(135deg,var(--gd),var(--gl));padding:3px 16px;font-weight:600}
+.h-ev::after{content:'';position:absolute;inset:-1px;border:1px solid rgba(201,168,76,.15);pointer-events:none;animation:breathe 3s ease-in-out infinite}
+.h-ev-d{font-family:var(--se);font-size:1.6rem;font-weight:600;color:var(--wh);margin-top:6px;letter-spacing:.05em}
+.h-ev-d span{font-family:var(--sn);font-size:.82rem;font-weight:400;color:var(--gd);margin-left:6px}
+.h-ev-m{font-size:.72rem;color:var(--wd);margin-top:6px}
+.h-cta-wrap{animation:slideUp 1s cubic-bezier(.22,1,.36,1) 1.3s forwards}
+.h-scroll{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fi 1s ease 2.2s forwards}
+.h-scroll span{font-family:var(--se);font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--wm)}
+.h-scroll::after{content:'';width:1px;height:28px;background:linear-gradient(to bottom,var(--gdk),transparent);animation:fl 2s ease-in-out infinite}
+
+/* ========== 2. 共感 ========== */
+.emp{background:#111111 !important}
+.emp-q{font-family:var(--sj);font-style:italic;font-size:1.05rem;font-weight:400;line-height:2.2;text-align:center;color:var(--gl);margin-bottom:36px;position:relative}
+.emp-q::before,.emp-q::after{content:'';display:block;width:24px;height:1px;background:linear-gradient(to right,transparent,var(--gdk));margin:16px auto}
+.emp-q::after{background:linear-gradient(to left,transparent,var(--gdk))}
+.emp-list{max-width:360px;margin:0 auto 40px}
+.emp-i{padding:16px 0 16px 32px;border-bottom:1px solid rgba(201,168,76,.06);font-family:var(--sj);font-size:.88rem;font-weight:400;line-height:1.9;color:var(--wd);position:relative}
+.emp-i::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:16px;height:16px;border:1px solid rgba(201,168,76,.3);border-radius:50%}
+.emp-i::after{content:'\2714';position:absolute;left:3px;top:50%;transform:translateY(-50%);color:var(--gd);font-size:.55rem;opacity:.7}
+.emp-c{text-align:center;font-size:.95rem;line-height:2.1;color:var(--wd)}
+.emp-c strong{color:var(--wh);font-weight:600;display:block;margin-top:10px;font-size:1.1rem;letter-spacing:.06em}
+
+/* ========== 3. 常識の否定 ========== */
+.deny{background:#0a0a0a !important;position:relative}
+.deny::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(201,168,76,.04) 0%,transparent 60%);pointer-events:none}
+.deny-text{max-width:380px;margin:0 auto;font-family:var(--sj);font-size:.92rem;font-weight:400;line-height:2.4;color:var(--wd);text-align:center;position:relative;z-index:1}
+.deny-text p{margin-bottom:22px}
+.deny-text .big{font-size:1.2rem;font-weight:700;color:var(--wh);line-height:1.9;display:block;margin:28px 0;padding:20px 0;border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08)}
+.deny-text .red{color:#c47070;font-weight:600}
+.deny-text .gd{color:var(--gd);font-weight:600}
+.deny-shift{text-align:center;margin-top:48px;padding:32px 24px;position:relative;background:rgba(201,168,76,.03)}
+.deny-shift::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(to right,transparent,var(--gd),transparent)}
+.deny-shift::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:1px;background:linear-gradient(to right,transparent,var(--gd),transparent)}
+.deny-shift p{font-family:var(--sj);font-size:1.25rem;font-weight:700;line-height:2;color:var(--wh)}
+.deny-shift p .em{background:linear-gradient(135deg,#e2c97e,#c9a84c,#f5dfa0,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.35rem}
+
+/* ========== 4. 10の限界 ========== */
+.lim{background:#111111 !important}
+.lim-intro{text-align:center;font-size:.84rem;color:var(--wd);line-height:2;margin-bottom:44px;max-width:340px;margin-left:auto;margin-right:auto}
+.lim-intro strong{color:var(--wh);font-weight:600}
+.lg{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto}
+.lc{background:var(--bk3);border-left:3px solid var(--gd);overflow:hidden;position:relative}
+.lc::after{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:linear-gradient(to left,rgba(201,168,76,.02),transparent);pointer-events:none}
+.lc-h{padding:18px 20px 10px;position:relative;z-index:1}
+.lc-n{font-family:var(--se);font-size:1.6rem;font-weight:700;color:rgba(201,168,76,.12);line-height:1;margin-bottom:4px;letter-spacing:.05em}
+.lc-t{font-size:1.1rem;font-weight:900;color:var(--gd);line-height:1.4;letter-spacing:.04em}
+.lc-v{padding:6px 20px 10px 32px;font-family:var(--sj);font-style:italic;font-size:.8rem;color:var(--gl);line-height:1.8;font-weight:500;border-left:2px solid rgba(201,168,76,.15);margin-left:20px;position:relative;z-index:1}
+.lc-d{background:rgba(26,26,26,.8);padding:10px 20px 14px;font-size:.74rem;font-weight:300;color:var(--wm);line-height:2;position:relative;z-index:1}
+.lim-close{text-align:center;margin-top:48px;font-family:var(--sj);font-size:.95rem;line-height:2.1;color:var(--wd)}
+.lim-close .big{font-size:1.15rem;font-weight:700;color:var(--wh);display:block;margin-top:14px;letter-spacing:.06em}
+.lim-close .big .em{background:linear-gradient(135deg,#e2c97e,#c9a84c,#f5dfa0,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* MID CTA */
+.mcta{background:#0a0a0a !important;padding:60px 20px;text-align:center;position:relative;overflow:hidden}
+.mcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,168,76,.06) 0%,transparent 65%);pointer-events:none}
+.mcta-in{position:relative;z-index:2}
+.mcta-in p{font-family:var(--sj);font-size:1.05rem;font-weight:400;line-height:2.1;color:var(--wd);margin-bottom:28px}
+.mcta-in p .em{background:linear-gradient(135deg,#e2c97e,#c9a84c,#f5dfa0,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;font-size:1.15rem}
+
+/* ========== 5. りょうたのストーリー ========== */
+.story{background:#111111 !important}
+.st-card{max-width:400px;margin:0 auto}
+.st-photo{width:140px;height:140px;margin:0 auto 24px;border:2px solid rgba(201,168,76,.35);background:var(--bk3);display:flex;align-items:center;justify-content:center;font-family:var(--se);font-size:2.5rem;font-weight:300;color:var(--gd);position:relative}
+.st-photo::after{content:'';position:absolute;inset:-6px;border:1px solid rgba(201,168,76,.1);pointer-events:none}
+.st-intro{text-align:center;margin-bottom:24px}
+.st-role{font-family:var(--se);font-style:italic;font-size:.62rem;letter-spacing:.2em;color:var(--gd);margin-bottom:6px}
+.st-nm{font-size:.78rem;color:var(--wm);margin-bottom:2px}
+.st-nmj{font-family:var(--sj);font-size:1.4rem;font-weight:700;letter-spacing:.1em;color:var(--wh)}
+.st-body{margin-top:32px}
+.st-body p{font-size:.86rem;font-weight:300;color:var(--wd);line-height:2.3;margin-bottom:22px}
+.st-body .bold{color:var(--wh);font-weight:600}
+.st-body .gd{color:var(--gd);font-weight:600}
+.st-body .big{font-family:var(--sj);font-size:1.1rem;font-weight:600;color:var(--wh);line-height:1.9;text-align:center;padding:28px 0;border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12);margin:32px 0;position:relative}
+.st-body .big::before{content:'';position:absolute;top:-1px;left:30%;right:30%;height:1px;background:linear-gradient(to right,transparent,var(--gd),transparent)}
+.st-body .big .em{background:linear-gradient(135deg,#e2c97e,#c9a84c,#f5dfa0,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.st-stats{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(201,168,76,.15);margin:32px 0;position:relative}
+.st-stats::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(201,168,76,.1)}
+.st-stats::after{content:'';position:absolute;top:0;left:50%;bottom:0;width:1px;background:rgba(201,168,76,.1)}
+.st-s{padding:18px 12px;text-align:center}
+.st-sn{font-family:var(--se);font-size:1.5rem;font-weight:600;color:var(--wh);letter-spacing:.02em}
+.st-sn span{font-family:var(--sn);font-size:.6rem;color:var(--wm);letter-spacing:.02em}
+.st-sl{font-size:.6rem;color:var(--wm);margin-top:3px;letter-spacing:.04em}
+.st-msg{font-family:var(--sj);font-size:.95rem;font-weight:500;line-height:2.1;text-align:center;color:var(--wd);margin-top:36px;padding:28px 20px;border:1px solid rgba(201,168,76,.15);background:rgba(201,168,76,.02);position:relative}
+.st-msg::before{content:'';position:absolute;top:8px;left:8px;width:16px;height:16px;border-top:1px solid var(--gd);border-left:1px solid var(--gd)}
+.st-msg::after{content:'';position:absolute;bottom:8px;right:8px;width:16px;height:16px;border-bottom:1px solid var(--gd);border-right:1px solid var(--gd)}
+.st-msg .gd{color:var(--gd);font-weight:700}
+
+/* ========== 6. 受講生の声 ========== */
+.vc{background:#0a0a0a !important;position:relative}
+.vc::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,.03) 0%,transparent 50%);pointer-events:none}
+.vc-list{max-width:400px;margin:0 auto;display:flex;flex-direction:column;gap:16px;position:relative;z-index:1}
+.vci{background:var(--bk3);border:1px solid rgba(201,168,76,.08);padding:26px 24px;position:relative;overflow:hidden}
+.vci::before{content:'\201C';position:absolute;top:-2px;left:14px;font-family:var(--se);font-size:3.5rem;color:rgba(201,168,76,.07);line-height:1}
+.vci::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(to right,var(--gd),transparent);opacity:.15}
+.vci-t{font-family:var(--sj);font-size:.84rem;font-weight:400;color:var(--wd);line-height:2.1;margin-bottom:14px;position:relative;z-index:1}
+.vci-a{font-size:.68rem;color:var(--wm);text-align:right;font-family:var(--se);letter-spacing:.05em}
+.vc-more{text-align:center;margin-top:32px;font-size:.78rem;color:var(--wm);font-style:italic}
+
+/* ========== 7. 解決策 ========== */
+.sol{background:#111111 !important}
+.sol-box{max-width:380px;margin:0 auto 32px;border:1px solid rgba(201,168,76,.25);background:var(--bk3);padding:32px 24px;position:relative}
+.sol-box::before{content:'';position:absolute;top:8px;left:8px;width:16px;height:16px;border-top:1px solid var(--gd);border-left:1px solid var(--gd)}
+.sol-box::after{content:'';position:absolute;bottom:8px;right:8px;width:16px;height:16px;border-bottom:1px solid var(--gd);border-right:1px solid var(--gd)}
+.sol-lb{font-family:var(--se);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gd);margin-bottom:14px}
+.sol-box p{font-family:var(--sj);font-size:.9rem;font-weight:400;line-height:2.2;color:var(--wd)}
+.sol-box p .gd{color:var(--gd);font-weight:600}
+.sol-3m{max-width:380px;margin:0 auto;border:1px solid rgba(201,168,76,.2);padding:32px 24px;background:var(--bk3);position:relative;overflow:hidden}
+.sol-3m::before{content:'3M';position:absolute;top:-10px;right:-10px;font-family:var(--se);font-size:6rem;font-weight:700;color:rgba(201,168,76,.04);line-height:1;pointer-events:none}
+.sol-3mn{font-family:var(--se);font-size:2.8rem;font-weight:300;color:rgba(201,168,76,.2);line-height:1;margin-bottom:4px}
+.sol-3ml{font-family:var(--se);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gd);margin-bottom:20px}
+.sol-3m p{font-size:.82rem;font-weight:300;color:var(--wd);line-height:2.2;margin-bottom:14px;position:relative;z-index:1}
+.sol-3m p:last-child{margin-bottom:0}
+.sol-3m .bold{color:var(--wh);font-weight:600}
+.sol-3m .gd{color:var(--gd);font-weight:600}
+
+/* ========== 8. 体験会ベネフィット ========== */
+.ben{background:#0a0a0a !important}
+.ben-list{max-width:400px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+.ben-i{display:flex;gap:18px;align-items:flex-start}
+.ben-ic{flex-shrink:0;width:48px;height:48px;border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-family:var(--se);font-size:1rem;font-weight:400;color:var(--gd);background:rgba(201,168,76,.04);position:relative}
+.ben-ic::after{content:'';position:absolute;inset:-3px;border:1px solid rgba(201,168,76,.08)}
+.ben-b h3{font-family:var(--sj);font-size:.92rem;font-weight:600;color:var(--wh);margin-bottom:6px;line-height:1.6}
+.ben-b p{font-size:.76rem;font-weight:300;color:var(--wd);line-height:2}
+
+/* ========== 9. 13の心得 ========== */
+.crd{background:#111111 !important}
+.crd-intro{text-align:center;font-size:.84rem;color:var(--wd);line-height:2.1;max-width:340px;margin:0 auto 40px}
+.crd-list{max-width:400px;margin:0 auto;display:flex;flex-direction:column;gap:6px}
+.cr{display:flex;gap:14px;align-items:flex-start;background:var(--bk3);border-left:3px solid rgba(201,168,76,.2);padding:16px 16px 16px 14px}
+.cr.last{border-left-color:var(--gd);background:rgba(26,22,16,1)}
+.cr-n{font-family:var(--se);font-size:1.15rem;font-weight:700;color:rgba(201,168,76,.15);line-height:1;min-width:30px;padding-top:2px}
+.cr.last .cr-n{color:rgba(201,168,76,.4)}
+.cr-t{font-size:.84rem;font-weight:600;color:var(--gd);line-height:1.6}
+.crd-note{text-align:center;margin-top:32px;font-size:.78rem;color:var(--wm);line-height:2.1;max-width:340px;margin-left:auto;margin-right:auto}
+.crd-note .s{color:var(--wd);font-weight:500}
+
+/* ========== 10. イベント詳細 ========== */
+.ev{background:#0a0a0a !important;position:relative}
+.ev::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,168,76,.04) 0%,transparent 60%);pointer-events:none}
+.ev-card{max-width:400px;margin:0 auto;background:var(--bk3);border:1px solid rgba(201,168,76,.25);padding:36px 24px;position:relative;z-index:1}
+.ev-card::before{content:'';position:absolute;top:8px;left:8px;width:20px;height:20px;border-top:1px solid var(--gd);border-left:1px solid var(--gd)}
+.ev-card::after{content:'';position:absolute;bottom:8px;right:8px;width:20px;height:20px;border-bottom:1px solid var(--gd);border-right:1px solid var(--gd)}
+.ev-badge{display:inline-block;font-family:var(--se);font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bk);background:linear-gradient(135deg,var(--gd),var(--gl));padding:5px 16px;margin-bottom:20px;font-weight:600}
+.ev-tbl{width:100%;border-collapse:collapse}
+.ev-tbl tr{border-bottom:1px solid rgba(201,168,76,.06)}
+.ev-tbl tr:last-child{border-bottom:none}
+.ev-tbl th{font-family:var(--sj);font-size:.72rem;font-weight:500;color:var(--gd);text-align:left;padding:14px 0;width:66px;vertical-align:top}
+.ev-tbl td{font-size:.8rem;font-weight:300;color:var(--wd);padding:14px 0;line-height:1.8}
+.ev-tbl td strong{color:var(--wh);font-weight:600}
+.ev-d{font-family:var(--se);font-size:1.6rem;font-weight:700;color:var(--wh);letter-spacing:.03em}
+.ev-d span{font-family:var(--sn);font-size:.78rem;font-weight:400;color:var(--gd)}
+.ev-free{font-family:var(--sj);font-size:1.5rem;font-weight:700;color:var(--wh)}
+
+/* FAQ */
+.faq{background:#111111 !important}
+.faq-list{max-width:400px;margin:0 auto}
+.fq{border-bottom:1px solid rgba(201,168,76,.06)}
+.fq-q{width:100%;background:none;border:none;color:var(--wh);font-family:var(--sj);font-size:.88rem;font-weight:500;text-align:left;padding:18px 34px 18px 0;cursor:pointer;position:relative;line-height:1.7;-webkit-tap-highlight-color:transparent}
+.fq-q::before{content:'Q.';font-family:var(--se);color:var(--gd);margin-right:8px;font-weight:400;font-size:.95rem}
+.fq-q::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--se);font-size:1.2rem;font-weight:300;color:var(--gd);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.fq.open .fq-q::after{transform:translateY(-50%) rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.22,1,.36,1)}
+.fq.open .fq-a{max-height:500px}
+.fq-a p{font-size:.78rem;font-weight:300;color:var(--wd);line-height:2.1;padding:0 0 18px 24px}
+
+/* FINAL CTA */
+.fcta{background:#0a0a0a !important;padding:90px 20px;text-align:center;position:relative;overflow:hidden}
+.fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(201,168,76,.08) 0%,transparent 65%);pointer-events:none}
+.fcta::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(201,168,76,.04) 0%,transparent 40%);pointer-events:none}
+.fcta-in{position:relative;z-index:2;max-width:400px;margin:0 auto}
+.fcta-msg{font-family:var(--sj);font-size:1.3rem;font-weight:700;line-height:2.1;letter-spacing:.08em;margin-bottom:16px}
+.fcta-msg .em{background:linear-gradient(135deg,#e2c97e,#c9a84c,#f5dfa0,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.4rem}
+.fcta-sub{font-size:.82rem;color:var(--wd);line-height:2.2;margin-bottom:36px}
+.fcta-btn-sub{display:block;font-family:var(--se);font-style:italic;font-size:.62rem;letter-spacing:.15em;color:var(--gdk);margin-top:10px}
+
+/* FOOTER */
+.ft{background:#0a0a0a !important;padding:36px 20px 100px;text-align:center;border-top:1px solid rgba(201,168,76,.06)}
+.ft-br{font-family:var(--se);font-size:.95rem;font-weight:400;letter-spacing:.22em;color:var(--gdk);margin-bottom:4px}
+.ft-co{font-size:.6rem;color:var(--wm);margin-bottom:2px}
+.ft-cp{font-family:var(--se);font-size:.55rem;color:rgba(255,255,255,.12);letter-spacing:.1em}
+
+@media(min-width:768px){
+.sp{padding:120px 40px}
+.h-br{font-size:5rem}
+.h-shift{font-size:1.55rem}
+.h-shift .em{font-size:1.7rem}
+.t{font-size:1.8rem}
+.lg,.ben-list,.vc-list,.faq-list,.ev-card,.st-card,.crd-list{max-width:600px}
+.float-cta{display:none}
+.ft{padding-bottom:36px}
+}
+</style>
+</head>
+<body style="background:#0a0a0a !important;color:#f0ece4 !important;">
+
+<!-- FLOATING BOTTOM CTA -->
+<div class="float-cta" id="floatCta">
+<div class="float-cta-info">
+<span class="float-cta-date">3/24 (火) 21:00</span>
+<span class="float-cta-sub">体験会｜参加無料</span>
+</div>
+<a href="#event" class="cta">今すぐ申し込む</a>
+</div>
+
+<!-- 1. HERO -->
+<section class="hero" id="top">
+<canvas id="particles"></canvas>
+<div class="hc">
+<p class="h-ey">3-Month Intensive Business Program</p>
+<h1 class="h-br">LIMIT<br>BREAK</h1>
+<p class="h-sub">— Break Your Limits, Build Your Future —</p>
+<div class="h-dv"></div>
+<p class="h-shift">あなたに足りないのは<br>知識じゃない。<br><span class="em">限界を壊す力</span>だ。</p>
+<p class="h-copy">4,000万円の自己投資でも変われなかった僕が<br>「たった一つの気づき」で全てを変えた。<br>その気づきを、3ヶ月であなたに届ける。</p>
+<div class="h-ev">
+<div class="h-ev-d">3.24<span>（火）</span> 21:00 - 23:00</div>
+<p class="h-ev-m">体験会＆説明会｜オンライン開催｜参加無料</p>
+</div>
+<div class="h-cta-wrap">
+<a href="#event" class="cta">体験会に参加する</a>
+<span class="cta-s">＼ 参加無料・オンライン開催 ／</span>
+</div>
+</div>
+<div class="h-scroll"><span>Scroll</span></div>
+</section>
+
+<div class="sec-div" style="background:#111111 !important"></div>
+
+<!-- 2. 共感 -->
+<section class="emp sp" id="emp">
+<div class="ao"><p class="lb">Are You…?</p><h2 class="t">こんな自分に<br><span class="gt">心当たりはありませんか</span></h2></div>
+<p class="emp-q ao ao-d1">「頑張っているのに——<br>なぜか、変われない。」</p>
+<div class="emp-list">
+<div class="emp-i ao ao-d1">やりたいことはあるのに、動けない</div>
+<div class="emp-i ao ao-d2">学んでも学んでも「まだ足りない」</div>
+<div class="emp-i ao ao-d2">値上げしたいけど、怖い</div>
+<div class="emp-i ao ao-d3">成功している自分がイメージできない</div>
+<div class="emp-i ao ao-d3">SNSを頑張っても、売上につながらない</div>
+<div class="emp-i ao ao-d4">他の講座に通ったけど、変われなかった</div>
+</div>
+<div class="emp-c ao ao-d4">一つでも当てはまるなら、<br>最後まで読んでほしい。<strong>あなたが悪いんじゃない。</strong></div>
+</section>
+
+<div class="sec-div-d" style="background:#0a0a0a !important"></div>
+
+<!-- 3. 常識の否定 -->
+<section class="deny sp" id="deny">
+<div class="ao"><p class="lb">Paradigm Shift</p><h2 class="t">あなたが<span class="gt">変われない</span><br>本当の理由</h2><div class="gl" style="margin-bottom:36px"></div></div>
+<div class="deny-text">
+<p class="ao">多くの起業塾は<br>「スキル」と「ノウハウ」を教えます。</p>
+<p class="ao">でも、正直に聞かせてください。</p>
+<p class="big ao">知識は、もう十分<br>持っていませんか？</p>
+<p class="ao">問題は知識の量じゃない。</p>
+<p class="ao"><span class="red">知識を「行動」に変えられない自分。</span><br><span class="red">行動しても「結果」が出ない自分。</span></p>
+<p class="ao">その原因は——<br><span class="gd">あなたの内側にある「限界」</span>です。</p>
+<p class="ao">この限界に気づかない限り、<br>どんな講座に通っても同じ。</p>
+</div>
+<div class="deny-shift ao"><p>あなたに足りないのは知識じゃない。<br><span class="em">限界を壊す力</span>だ。</p></div>
+</section>
+
+<div class="sec-div" style="background:#111111 !important"></div>
+
+<!-- 4. 10の限界 -->
+<section class="lim sp" id="limits">
+<div class="ao"><p class="lb">10 Limits</p><h2 class="t">あなたを止め続ける<br><span class="gt">10の限界</span></h2><div class="gl" style="margin-bottom:36px"></div></div>
+<p class="lim-intro ao">見えない敵には勝てない。<br>だから、<strong>名前をつけた。</strong></p>
+<div class="lg">
+<div class="lc ao"><div class="lc-h"><div class="lc-n">01</div><h3 class="lc-t">行動の限界</h3></div><p class="lc-v">「わかってる。でも、動けない。」</p><p class="lc-d">知識は持っている。なのに「できる」に辿り着けない。</p></div>
+<div class="lc ao"><div class="lc-h"><div class="lc-n">02</div><h3 class="lc-t">意識の限界</h3></div><p class="lc-v">「やる気が出たら、やろう。」</p><p class="lc-d">「やる気」は結果であって、条件ではない。</p></div>
+<div class="lc ao"><div class="lc-h"><div class="lc-n">03</div><h3 class="lc-t">売上の限界</h3></div><p class="lc-v">「値上げしたら、逃げられそうで。」</p><p class="lc-d">その「ブロック」こそが、月商100万円の壁。</p></div>
+<div class="lc ao"><div class="lc-h"><div class="lc-n">04</div><h3 class="lc-t">想像の限界</h3></div><p class="lc-v">「自分が稼いでいる姿、正直イメージできない。」</p><p class="lc-d">描けないものは、手に入らない。</p></div>
+<div class="lc ao"><div class="lc-h"><div class="lc-n">05</div><h3 class="lc-t">価値の限界</h3></div><p class="lc-v">「私の価値って、いくらなんだろう。」</p><p class="lc-d">自信の問題ではなく、認識の問題。</p></div>
+<div class="lc ao"><div class="lc-h"><div class="lc-n">06</div><h3 class="lc-t">メンタルの限界</h3></div><p class="lc-v">「うまくいっている人は、何かが違う。」</p><p class="lc-d">折れない心は才能じゃない。正しいメソッドで手に入る。</p></div>
+<div class="lc ao"><div class="lc-h"><div class="lc-n">07</div><h3 class="lc-t">ビジネスの限界</h3></div><p class="lc-v">「また同じことをやっている気がする。」</p><p class="lc-d">革新がないビジネスは、やるほど消耗する。</p></div>
+<div class="lc ao"><div class="lc-h"><div class="lc-n">08</div><h3 class="lc-t">覚悟の限界</h3></div><p class="lc-v">「本当にできるのか、まだ信じ切れていない。」</p><p class="lc-d">覚悟が決まっていないだけ。そしてそれは、今日変えられる。</p></div>
+<div class="lc ao"><div class="lc-h"><div class="lc-n">09</div><h3 class="lc-t">挑戦の限界</h3></div><p class="lc-v">「失敗したら、どうしよう。」</p><p class="lc-d">その構造を壊さない限り、一歩は永遠に踏み出せない。</p></div>
+<div class="lc ao"><div class="lc-h"><div class="lc-n">10</div><h3 class="lc-t">成長の限界</h3></div><p class="lc-v">「自分なりに、やり切っているつもりだけど。」</p><p class="lc-d">「つもり」が最も危険。進化の扉は思い込みの向こうにある。</p></div>
+</div>
+<div class="lim-close ao">いくつ、心に刺さりましたか？<span class="big">この限界を壊さない限り——<br><span class="em">何も変わらない。</span></span></div>
+</section>
+
+<!-- MID CTA -->
+<section class="mcta">
+<div class="mcta-in ao"><p>でも、安心してほしい。<br>この限界は、<span class="em">壊せる。</span></p><a href="#event" class="cta">3/24 体験会で壊し方を知る</a><span class="cta-s">＼ 参加無料・オンライン開催 ／</span></div>
+</section>
+
+<div class="sec-div" style="background:#111111 !important"></div>
+
+<!-- 5. りょうたのストーリー -->
+<section class="story sp" id="story">
+<div class="ao"><p class="lb">My Story</p><h2 class="t">なぜ僕が<br><span class="gt">このプログラム</span>を作ったのか</h2><div class="gl" style="margin-bottom:40px"></div></div>
+<div class="st-card">
+<div class="st-photo ao ao-s">R</div>
+<div class="st-intro ao"><p class="st-role">Founder / Lead Instructor</p><p class="st-nm">薬剤師革命家</p><h3 class="st-nmj">りょうた</h3></div>
+<div class="st-body">
+<p class="ao">正直に話します。</p>
+<p class="ao"><span class="bold">僕は、15年間で4,000万円を自己投資した。</span><br>2,600の講座を受けた。<br>血のにじむような努力もした。</p>
+<p class="ao">でも、変われなかった。</p>
+<p class="ao">薬剤師として働きながら、<br>「もっと学ばなきゃ」「まだ足りない」と<br>自分に言い聞かせ続けた。</p>
+<p class="ao">学べば学ぶほど、<span class="bold">動けなくなった。</span></p>
+<p class="ao">起業したいのに、決断できない。<br>値段をつけるのが怖い。<br>「自分なんかにできるのか」と<br>毎晩、天井を見つめていた。</p>
+<p class="big ao">ある日、気づいた。</p>
+<p class="ao"><span class="gd">足りなかったのは知識じゃない。</span></p>
+<p class="ao">僕を止めていたのは、<br>僕自身の中にある<span class="gd">「限界」</span>だった。</p>
+<p class="ao">その瞬間、<span class="bold">見えない敵に名前がついた。</span><br>名前がついた瞬間、壊し方がわかった。</p>
+<p class="ao">そこから全てが変わった。</p>
+<p class="ao">最年少で管理薬剤師に就任。<br>店舗利益を1年で2,000万円増やした。<br>全国で1,000回の講演を行い、<br>2万人の前に立った。</p>
+<p class="ao">そして2021年、<span class="gd">株式会社ヘルスギルドを設立。</span></p>
+</div>
+<div class="st-stats ao ao-s">
+<div class="st-s"><div class="st-sn"><span class="counter" data-target="15">0</span><span>年間</span></div><div class="st-sl">2,600講座受講</div></div>
+<div class="st-s"><div class="st-sn"><span class="counter" data-target="4000">0</span><span>万円</span></div><div class="st-sl">自己投資額</div></div>
+<div class="st-s"><div class="st-sn"><span class="counter" data-target="14">0</span><span>年</span></div><div class="st-sl">講師歴</div></div>
+<div class="st-s"><div class="st-sn"><span class="counter" data-target="20000">0</span><span>人</span></div><div class="st-sl">以上を指導</div></div>
+</div>
+<div class="st-msg ao"><p>LIMIT BREAKを作った理由はたった一つ。<br><br><span class="gd">「かつての僕と同じように<br>苦しんでいる人を救いたい。」</span><br><br>情報じゃない。<br>変革の体験を届ける。</p></div>
+</div>
+</section>
+
+<div class="sec-div-d" style="background:#0a0a0a !important"></div>
+
+<!-- 6. 受講生の声 -->
+<section class="vc sp" id="voice">
+<div class="ao"><p class="lb">Voice</p><h2 class="t">限界を壊した人たちの<br><span class="gt">リアルな声</span></h2><div class="gl" style="margin-bottom:40px"></div></div>
+<div class="vc-list">
+<div class="vci ao"><p class="vci-t">ずっと「まだ準備が足りない」と思って動けなかった自分が、たった2ヶ月で初のクライアントを獲得。りょうたさんとの対話で、限界が「思い込み」だったと気づけた。</p><p class="vci-a">— 30代女性・医療従事者</p></div>
+<div class="vci ao"><p class="vci-t">値上げが怖くて月商30万円の壁を超えられなかった。「売上の限界」を突破した瞬間、世界が変わった。今では自信を持って価格を提示できる。</p><p class="vci-a">— 40代男性・フリーランス</p></div>
+<div class="vci ao"><p class="vci-t">一人で頑張り続けて疲弊していた。仕組み化で労働時間は半分、売上は3倍に。もっと早く出会いたかった。</p><p class="vci-a">— 30代女性・オンライン講師</p></div>
+<div class="vci ao"><p class="vci-t">「自分なんかにできるわけない」と思っていた。りょうたさんに「それ、覚悟の限界だよ」と言われた瞬間、涙が出た。名前がついた途端、壊せた。</p><p class="vci-a">— 30代男性・会社員（起業準備中）</p></div>
+<div class="vci ao"><p class="vci-t">4つの講座に通って、どれも途中で挫折した。LIMIT BREAKで初めて「自分が変われない原因」に向き合えた。スキルじゃなく、限界だったんだと腑に落ちた。</p><p class="vci-a">— 40代女性・セラピスト</p></div>
+</div>
+<p class="vc-more ao">※ 参加者の声は随時追加していきます</p>
+</section>
+
+<div class="sec-div" style="background:#111111 !important"></div>
+
+<!-- 7. 解決策 -->
+<section class="sol sp" id="solution">
+<div class="ao"><p class="lb">Solution</p><h2 class="t">だからこそ——<br><span class="gt">LIMIT BREAK</span></h2><div class="gl" style="margin-bottom:36px"></div></div>
+<div class="sol-box ao ao-s"><p class="sol-lb">What is LIMIT BREAK?</p><p>あなたの中にある限界を、<span class="gd">3ヶ月</span>で根こそぎ壊し、<span class="gd">新しい自分を取り戻す</span>ビジネスプログラム。</p></div>
+<div class="sol-3m ao ao-s"><div class="sol-3mn">3M</div><p class="sol-3ml">Short Term Break</p><p>一般的な講座は、時間をかけて「じわじわ」成長させる。</p><p><span class="bold">LIMIT BREAKは違う。</span></p><p><span class="gd">3ヶ月に意図的に負荷をかけ</span>、限界を一気に突き破る。</p><p>正しいメソッドと覚悟があれば、<span class="gd">限界は短期で崩せる。</span></p></div>
+</section>
+
+<div class="sec-div-d" style="background:#0a0a0a !important"></div>
+
+<!-- 8. 体験会ベネフィット -->
+<section class="ben sp" id="benefit">
+<div class="ao"><p class="lb">Event Benefit</p><h2 class="t">3/24 体験会で<br><span class="gt">手に入れるもの</span></h2><div class="gl" style="margin-bottom:44px"></div></div>
+<div class="ben-list">
+<div class="ben-i ao"><div class="ben-ic">01</div><div class="ben-b"><h3>あなたの「限界」をその場で特定</h3><p>限界突破診断のライブ版。ビジネスを止めている本当の原因が明らかになる。</p></div></div>
+<div class="ben-i ao ao-d1"><div class="ben-ic">02</div><div class="ben-b"><h3>月商100万円への道筋が見える</h3><p>「何をすればいいかわからない」が終わる日。</p></div></div>
+<div class="ben-i ao ao-d2"><div class="ben-ic">03</div><div class="ben-b"><h3>限界が壊れる瞬間を体験する</h3><p>学ぶんじゃない。体験する。自分の限界が崩れるリアルな感覚を。</p></div></div>
+<div class="ben-i ao ao-d3"><div class="ben-ic">04</div><div class="ben-b"><h3>同じ志を持つ仲間と出会う</h3><p>「この仲間と一緒に突破したい」——その感覚が最大のエンジンになる。</p></div></div>
+</div>
+</section>
+
+<div class="sec-div" style="background:#111111 !important"></div>
+
+<!-- 9. 13の心得 -->
+<section class="crd sp" id="creed">
+<div class="ao"><p class="lb">Creed</p><h2 class="t">13の<span class="gt">心得</span></h2><div class="gl" style="margin-bottom:36px"></div></div>
+<p class="crd-intro ao">この心得に共感できる方だけ<br>ご参加ください。<br>だからこそ、安心して学べる。</p>
+<div class="crd-list">
+<div class="cr ao"><div class="cr-n">01</div><div class="cr-t">礼に始まり、礼に終わる。</div></div>
+<div class="cr ao"><div class="cr-n">02</div><div class="cr-t">全員がフラットな関係である。</div></div>
+<div class="cr ao"><div class="cr-n">03</div><div class="cr-t">絶対に否定をしない。</div></div>
+<div class="cr ao"><div class="cr-n">04</div><div class="cr-t">先に与える。</div></div>
+<div class="cr ao"><div class="cr-n">05</div><div class="cr-t">可能性を潰す言葉を封印する。</div></div>
+<div class="cr ao"><div class="cr-n">06</div><div class="cr-t">ありがとうを口癖にする。</div></div>
+<div class="cr ao"><div class="cr-n">07</div><div class="cr-t">「どうやったらできるか？」だけを考える。</div></div>
+<div class="cr ao"><div class="cr-n">08</div><div class="cr-t">できていることに目を向ける。</div></div>
+<div class="cr ao"><div class="cr-n">09</div><div class="cr-t">知識の数ではなく、できることの数を増やす。</div></div>
+<div class="cr ao"><div class="cr-n">10</div><div class="cr-t">チームの力で成長する。</div></div>
+<div class="cr ao"><div class="cr-n">11</div><div class="cr-t">積極的に関わる。</div></div>
+<div class="cr ao"><div class="cr-n">12</div><div class="cr-t">アウトプットこそが成長する秘訣である。</div></div>
+<div class="cr last ao"><div class="cr-n">13</div><div class="cr-t">私は約束を守る。</div></div>
+</div>
+<p class="crd-note ao">この心得は「排除」ではなく<span class="s">「安心の保証」</span>。<br>こういう仲間と一緒に学べる場です。</p>
+</section>
+
+<div class="sec-div-d" style="background:#0a0a0a !important"></div>
+
+<!-- 10. イベント詳細 -->
+<section class="ev sp" id="event">
+<div class="ao"><p class="lb">Event</p><h2 class="t"><span class="gt">体験会＆説明会</span></h2><div class="gl" style="margin-bottom:40px"></div></div>
+<div class="ev-card ao ao-s">
+<span class="ev-badge">Free Event</span>
+<table class="ev-tbl">
+<tr><th>日時</th><td><span class="ev-d">3.24 <span>（火）</span></span><br><strong>21:00 〜 23:00</strong></td></tr>
+<tr><th>形式</th><td>オンライン（Zoom）</td></tr>
+<tr><th>費用</th><td><span class="ev-free">無料</span></td></tr>
+<tr><th>内容</th><td>10の限界ライブ診断<br>限界突破ワーク体験<br>月商100万円ロードマップ提案</td></tr>
+<tr><th>対象</th><td>起業準備中〜月商100万を本気で目指す方</td></tr>
+</table>
+</div>
+<div style="text-align:center;margin-top:36px" class="ao"><a href="#" class="cta cta-big">3/24 体験会に参加する</a><span class="cta-s">＼ 参加無料・オンライン開催 ／</span><p class="cta-note">※ 強引な勧誘は一切ございません</p></div>
+</section>
+
+<!-- FAQ -->
+<section class="faq sp" id="faq" style="background:#111111 !important;position:relative">
+<div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--gdk),transparent)"></div>
+<div class="ao"><p class="lb">FAQ</p><h2 class="t">よくある<span class="gt">ご質問</span></h2><div class="gl" style="margin-bottom:40px"></div></div>
+<div class="faq-list ao">
+<div class="fq"><button class="fq-q">起業前でも参加できますか？</button><div class="fq-a"><p>はい。むしろ起業前がベスト。ゼロからのロードマップを一緒に設計します。</p></div></div>
+<div class="fq"><button class="fq-q">本当に3ヶ月で変われますか？</button><div class="fq-a"><p>必要なのは「長い時間」ではなく「正しい力のかけ方」。骨折がギプスで正しく固定されれば短期で治るように、限界も正しいメソッドがあれば短期で壊せます。まずは体験会で、その感覚を体験してください。</p></div></div>
+<div class="fq"><button class="fq-q">まだ売れるものが何もないのですが…</button><div class="fq-a"><p>「売れるものがない」——それ自体が「価値の限界」です。2万人を指導してきた経験から断言しますが、価値を持っていない人はいません。まだ見つけられていないだけ。</p></div></div>
+<div class="fq"><button class="fq-q">本業が忙しくても取り組めますか？</button><div class="fq-a"><p>参加者の多くは本業を持ちながら取り組んでいます。「時間がない」も限界の一つ——その突破もLIMIT BREAKのテーマです。</p></div></div>
+<div class="fq"><button class="fq-q">他の講座で結果が出ませんでした…</button><div class="fq-a"><p>むしろそういう方にこそ受けてほしい。多くの講座は「スキル」を教えますが、LIMIT BREAKは「限界」に向き合います。原因が「限界」だったと気づいた瞬間、全てが変わります。</p></div></div>
+<div class="fq"><button class="fq-q">周りに起業仲間がいなくて不安です</button><div class="fq-a"><p>その孤独感こそ、限界を強化する最大の原因。13の心得で守られた安心安全な場で、本音で語れる仲間ができます。</p></div></div>
+<div class="fq"><button class="fq-q">体験会では何をしますか？</button><div class="fq-a"><p>2時間で「10の限界」をライブ診断、限界突破ワーク体験、月商100万への具体的ロードマップを提案します。強引な勧誘は一切ありません。</p></div></div>
+<div class="fq"><button class="fq-q">プログラムの期間と形式は？</button><div class="fq-a"><p>3ヶ月間の短期集中プログラム。すべてオンライン（Zoom）、平日夜の開催で本業と両立可能。アーカイブが充実しているので、遅れる心配はありません。</p></div></div>
+</div>
+</section>
+
+<!-- 最終CTA -->
+<section class="fcta" id="cta">
+<div class="fcta-in ao">
+<p class="fcta-msg">あなたの限界は<br><span class="em">あなたが作った幻想</span>だ。</p>
+<p class="fcta-sub">「いつかやろう」のいつかは、永遠に来ない。<br><br>3ヶ月後——<br>月商100万の道筋が見える自分か。<br>今と同じ自分か。<br><br>決めるのは、今この瞬間だ。</p>
+<a href="#" class="cta cta-big">3/24 体験会に参加する</a>
+<span class="fcta-btn-sub">— Break Your Limits Now —</span>
+<p class="cta-note">※ 強引な勧誘は一切ございません</p>
+</div>
+</section>
+
+<footer class="ft">
+<p class="ft-br">LIMIT BREAK</p>
+<p class="ft-co">株式会社ヘルスギルド（Health Guild Inc.）主宰</p>
+<p class="ft-cp">&copy; 2026 Health Guild Inc. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Scroll animations
+const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');if(e.target.querySelector('.counter')){e.target.querySelectorAll('.counter').forEach(c=>{const t=parseInt(c.dataset.target),d=2000,s=performance.now(),a=n=>{const p=Math.min((n-s)/d,1),v=1-Math.pow(1-p,3);c.textContent=Math.floor(t*v).toLocaleString();if(p<1)requestAnimationFrame(a)};requestAnimationFrame(a)})}}})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.ao,.ao-s').forEach(el=>obs.observe(el));
+
+// FAQ
+document.querySelectorAll('.fq-q').forEach(b=>{b.addEventListener('click',()=>{const i=b.parentElement,o=i.classList.contains('open');document.querySelectorAll('.fq').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')})});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+
+// Floating CTA
+const fc=document.getElementById('floatCta'),hero=document.querySelector('.hero'),fcta=document.querySelector('.fcta');
+new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting?fc.classList.remove('v'):fc.classList.add('v')})},{threshold:0}).observe(hero);
+new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)fc.classList.remove('v')})},{threshold:.3}).observe(fcta);
+
+// Particles
+(function(){const c=document.getElementById('particles');if(!c)return;const x=c.getContext('2d');let w,h,p=[];function r(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight}function cp(){return{x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.3,vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15-.05,a:Math.random()*.4+.1,f:Math.random()*.003+.001,d:Math.random()>.5?1:-1}}function init(){r();p=[];const n=Math.min(Math.floor(w*h/8000),60);for(let i=0;i<n;i++)p.push(cp())}function draw(){x.clearRect(0,0,w,h);p.forEach(q=>{q.x+=q.vx;q.y+=q.vy;q.a+=q.f*q.d;if(q.a<=.05||q.a>=.5)q.d*=-1;if(q.x<0||q.x>w||q.y<0||q.y>h){Object.assign(q,cp());q.y=q.vy<0?h:0}x.beginPath();x.arc(q.x,q.y,q.r,0,Math.PI*2);x.fillStyle='rgba(201,168,76,'+q.a+')';x.fill()});requestAnimationFrame(draw)}init();window.addEventListener('resize',init);draw()})();
+</script>
+</body>
+</html>
