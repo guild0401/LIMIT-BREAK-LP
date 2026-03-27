@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIMIT BREAK｜参加者向け導入資料</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+  :root {
+    --gd: #c9a84c;
+    --gl: #e2c97e;
+    --gb: #f5dfa0;
+    --gdk: #8a6d2b;
+    --wh: #f0ece4;
+    --wd: #b0a998;
+    --wm: #7a7368;
+    --bk: #0D0D0D;
+    --bk2: #111111;
+    --bk3: #141414;
+    --bk4: #1A1A1A;
+    --se: 'Cormorant Garamond', serif;
+    --sj: 'Noto Serif JP', serif;
+    --sn: 'Noto Sans JP', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background-color: var(--bk) !important;
+    color: #FFFFFF;
+    font-family: var(--sn);
+    font-size: 15px;
+    line-height: 1.8;
+    -webkit-text-size-adjust: 100%;
+    min-height: 100vh;
+  }
+  .container { max-width: 680px; margin: 0 auto; padding: 0 0 80px; }
+
+  /* NAV */
+  .nav {
+    background: var(--bk2);
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo { font-family: var(--se); font-size: 18px; font-weight: 700; color: var(--gd); letter-spacing: 0.15em; }
+  .nav-sub { font-size: 9px; color: #888; letter-spacing: 0.18em; margin-top: 2px; }
+  .nav-badge { background: var(--gd); color: var(--bk); font-size: 11px; font-weight: 700; padding: 6px 14px; letter-spacing: 0.08em; }
+
+  /* HERO */
+  .hero { padding: 48px 20px 44px; border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .hero-eyebrow { font-family: var(--se); font-size: 11px; letter-spacing: 0.3em; color: var(--gd); margin-bottom: 18px; text-transform: uppercase; }
+  .hero-tagline { font-family: var(--sj); font-size: 20px; font-weight: 600; color: #FFFFFF; line-height: 1.6; margin-bottom: 6px; }
+  .hero-tagline .gold { color: var(--gd); }
+  .hero-divider { width: 48px; height: 2px; background: linear-gradient(to right, var(--gd), transparent); margin: 20px 0; }
+  .hero-title { font-family: var(--se); font-size: clamp(48px, 14vw, 72px); font-weight: 700; line-height: 1; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .hero-title .limit { background: linear-gradient(135deg, #e2c97e, #c9a84c, #f5dfa0, #c9a84c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-title .brake { color: #FFFFFF; }
+  .hero-catch { font-family: var(--sj); font-size: 16px; color: var(--gl); font-weight: 600; margin: 18px 0 22px; letter-spacing: 0.06em; }
+  .hero-desc { font-size: 14px; color: #AAAAAA; line-height: 2; margin-bottom: 24px; }
+  .hero-desc strong { color: #FFFFFF; }
+  .hero-info-box { border: 1px solid rgba(201,168,76,0.3); background: var(--bk4); padding: 20px; }
+  .hero-info-box .label { font-size: 10px; color: var(--gd); letter-spacing: 0.2em; margin-bottom: 4px; text-transform: uppercase; }
+  .hero-info-box .val { font-size: 18px; font-weight: 700; color: #FFFFFF; }
+
+  /* SECTIONS */
+  .section { padding: 48px 20px 0; }
+  .sec-eyebrow { font-family: var(--se); font-size: 11px; letter-spacing: 0.3em; color: var(--gd); margin-bottom: 10px; text-transform: uppercase; }
+  .sec-title { font-family: var(--sj); font-size: clamp(24px, 6.5vw, 34px); font-weight: 700; line-height: 1.4; color: #FFFFFF; margin-bottom: 26px; }
+  .sec-title .gold { color: var(--gd); }
+
+  .divider-diamond { text-align: center; margin: 48px 0 0; color: rgba(201,168,76,0.3); font-size: 14px; position: relative; }
+  .divider-diamond::before, .divider-diamond::after { content: ''; display: inline-block; width: 30%; height: 1px; background: rgba(201,168,76,0.2); vertical-align: middle; margin: 0 12px; }
+
+  /* CONCEPT */
+  .concept-box { border: 1px solid rgba(201,168,76,0.35); background: var(--bk3); padding: 24px 20px; margin-bottom: 24px; }
+  .concept-box h3 { font-size: 12px; letter-spacing: 0.2em; color: var(--gd); font-weight: 700; margin-bottom: 14px; }
+  .concept-box p { font-size: 14px; color: #DDDDDD; line-height: 2; }
+  .concept-box .gold { color: var(--gd); font-weight: 700; }
+
+  .threem-box { border: 1px solid rgba(201,168,76,0.3); padding: 28px 20px; background: var(--bk3); position: relative; }
+  .threem-box::before { content: ''; position: absolute; top: 10px; left: 10px; width: 18px; height: 18px; border-top: 1px solid var(--gd); border-left: 1px solid var(--gd); }
+  .threem-box::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 18px; height: 18px; border-bottom: 1px solid var(--gd); border-right: 1px solid var(--gd); }
+  .threem-num { font-family: var(--se); font-size: 48px; font-weight: 700; color: rgba(201,168,76,0.2); line-height: 1; margin-bottom: 4px; }
+  .threem-title { font-family: var(--se); font-size: 11px; font-weight: 600; letter-spacing: 0.3em; color: var(--gd); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
+  .threem-title::before, .threem-title::after { content: '—'; color: rgba(201,168,76,0.4); }
+  .threem-body { font-size: 14px; color: #CCCCCC; line-height: 2; }
+  .threem-body p { margin-bottom: 14px; }
+  .threem-body .gold { color: var(--gd); font-weight: 700; }
+  .threem-body .white { color: #FFFFFF; font-weight: 700; }
+
+  /* LIMIT CARDS */
+  .limits-intro { padding: 0 20px; margin-bottom: 8px; }
+  .limits-intro h3 { font-size: 17px; font-weight: 700; color: #FFFFFF; border-left: 3px solid var(--gd); padding-left: 14px; line-height: 1.6; }
+
+  .limit-card { border-left: 3px solid var(--gd); margin: 0 20px 14px; background: var(--bk3); }
+  .card-num { padding: 16px 16px 4px; font-family: var(--se); font-size: 26px; font-weight: 700; color: rgba(201,168,76,0.2); line-height: 1; }
+  .card-title { padding: 4px 16px 8px; font-family: var(--sj); font-size: clamp(20px, 5.5vw, 26px); font-weight: 700; color: var(--gd); letter-spacing: 0.06em; }
+  .card-quote { padding: 4px 16px 10px 26px; font-size: 14px; color: var(--gl); font-style: italic; font-weight: 500; line-height: 1.7; border-left: 2px solid rgba(201,168,76,0.3); margin-left: 16px; }
+  .card-desc { background: #1E1E1E; padding: 12px 16px 16px; font-size: 13px; color: #AAAAAA; line-height: 2; }
+
+  /* INSTRUCTOR */
+  .instructor-section { background: var(--bk2); padding: 48px 20px 44px; margin-top: 48px; border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .instructor-name { text-align: center; font-size: 12px; color: #AAAAAA; margin-bottom: 4px; }
+  .instructor-name-jp { text-align: center; font-family: var(--sj); font-size: 22px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px; }
+  .instructor-en { text-align: center; font-family: var(--se); font-size: 10px; letter-spacing: 0.25em; color: rgba(201,168,76,0.55); margin-bottom: 20px; text-transform: uppercase; }
+  .instructor-role { font-size: 11px; letter-spacing: 0.2em; color: var(--gd); margin-bottom: 8px; }
+  .instructor-divider { width: 32px; height: 1px; background: var(--gd); margin-bottom: 22px; }
+
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(201,168,76,0.2); margin-bottom: 24px; }
+  .stat-cell { padding: 14px; border-right: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); }
+  .stat-cell:nth-child(2n) { border-right: none; }
+  .stat-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .stat-num { font-family: var(--se); font-size: 24px; font-weight: 700; color: #FFFFFF; }
+  .stat-num span { font-size: 13px; color: #AAAAAA; }
+  .stat-label { font-size: 10px; color: #666666; margin-top: 2px; }
+
+  .profile-text { font-size: 14px; color: #CCCCCC; line-height: 2; margin-bottom: 14px; }
+  .profile-text .gold { color: var(--gd); font-weight: 700; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .tag { border: 1px solid rgba(201,168,76,0.3); color: var(--gd); font-size: 10px; padding: 4px 10px; letter-spacing: 0.04em; }
+
+  /* FORMAT TABLE */
+  .format-table { width: 100%; border-collapse: collapse; }
+  .format-table tr { border-bottom: 1px solid #2A2A2A; }
+  .format-table td { padding: 14px 12px; font-size: 13px; vertical-align: top; }
+  .format-table td:first-child { color: var(--gd); font-weight: 700; width: 30%; border-left: 3px solid var(--gd); background: var(--bk4); padding-left: 12px; white-space: nowrap; }
+  .format-table td:last-child { color: #CCCCCC; background: var(--bk3); line-height: 1.9; }
+  .note { font-size: 11px; color: #888888; margin-top: 4px; }
+
+  /* SCHEDULE */
+  .schedule-summary { text-align: center; font-size: 11px; color: #666; margin-bottom: 18px; line-height: 1.9; }
+  .schedule-header { display: flex; background: var(--bk4); border-bottom: 1px solid rgba(201,168,76,0.3); padding: 8px 0; }
+  .schedule-header span { font-size: 10px; color: var(--gd); letter-spacing: 0.1em; text-transform: uppercase; }
+  .schedule-header span:nth-child(1) { width: 36%; padding-left: 14px; }
+  .schedule-header span:nth-child(2) { width: 28%; }
+  .schedule-header span:nth-child(3) { flex: 1; }
+
+  .schedule-item { display: flex; align-items: stretch; border-bottom: 1px solid #1E1E1E; min-height: 50px; background: var(--bk); }
+  .schedule-item.is-special { background: #141410; }
+  .schedule-item.is-camp { background: #101410; }
+  .s-date { width: 36%; padding: 10px 8px 10px 14px; font-size: 12px; color: #CCCCCC; border-left: 3px solid #2A2A2A; display: flex; align-items: center; line-height: 1.5; }
+  .schedule-item.is-special .s-date { border-left-color: var(--gd); color: var(--gl); }
+  .schedule-item.is-camp .s-date { border-left-color: #7A9A2A; color: #B8D45A; }
+  .s-time { width: 28%; padding: 10px 4px; font-size: 11px; color: #666; display: flex; align-items: center; }
+  .s-label { flex: 1; padding: 10px 8px 10px 0; display: flex; flex-direction: column; justify-content: center; gap: 2px; }
+  .label-main { font-size: 13px; font-weight: 700; color: #FFFFFF; }
+  .label-sub { font-size: 10px; color: var(--gd); }
+
+  /* CREED */
+  .creed-card { border-left: 3px solid rgba(201,168,76,0.4); background: var(--bk3); margin-bottom: 10px; padding: 18px 16px 18px 18px; display: flex; gap: 14px; align-items: flex-start; }
+  .creed-card.creed-last { border-left-color: var(--gd); background: #1A1610; }
+  .creed-num { font-family: var(--se); font-size: 22px; font-weight: 700; color: rgba(201,168,76,0.25); line-height: 1; min-width: 34px; padding-top: 2px; }
+  .creed-card.creed-last .creed-num { color: rgba(201,168,76,0.5); }
+  .creed-content { flex: 1; }
+  .creed-title { font-family: var(--sj); font-size: 14px; font-weight: 700; color: var(--gd); margin-bottom: 6px; line-height: 1.5; }
+  .creed-body { font-size: 12px; color: #AAAAAA; line-height: 2; }
+
+  /* NOTES */
+  .notes-list { list-style: none; }
+  .notes-list li { padding: 12px 0 12px 20px; position: relative; border-bottom: 1px solid #1E1E1E; font-size: 13px; color: #CCCCCC; line-height: 1.9; }
+  .notes-list li::before { content: "◆"; position: absolute; left: 0; color: var(--gd); font-size: 8px; top: 15px; }
+  .notes-list .gold { color: var(--gd); font-weight: 700; }
+
+  /* SNS */
+  .sns-section { padding: 48px 20px 0; }
+  .sns-grid { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+  .sns-item {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--bk3); border-left: 3px solid rgba(201,168,76,0.4);
+    padding: 14px 16px; text-decoration: none; transition: border-color 0.2s;
+  }
+  .sns-item:active { border-left-color: var(--gd); }
+  .sns-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; flex-shrink: 0;
+  }
+  .sns-info { flex: 1; overflow: hidden; }
+  .sns-name { font-size: 13px; font-weight: 700; color: var(--gd); margin-bottom: 2px; }
+  .sns-url { font-size: 10px; color: #666; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sns-arrow { font-size: 12px; color: rgba(201,168,76,0.4); flex-shrink: 0; }
+
+  /* FOOTER */
+  .footer-box { border: 1px solid rgba(201,168,76,0.4); padding: 32px 20px; text-align: center; margin: 48px 20px 0; background: var(--bk3); }
+  .footer-catch { font-family: var(--sj); font-size: 18px; font-weight: 700; color: var(--gd); line-height: 1.7; margin-bottom: 14px; }
+  .footer-org { font-size: 11px; color: #666; line-height: 2; }
+
+  /* ========== PRINT / PDF ========== */
+  @media print {
+    html, body { background: #0D0D0D !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .nav { position: static; }
+    .container { padding-bottom: 0; }
+
+    .page-break-before { break-before: page; page-break-before: always; }
+    .page-break-after { break-after: page; page-break-after: always; }
+    .no-break { break-inside: avoid; page-break-inside: avoid; }
+    .limit-card { break-inside: avoid; page-break-inside: avoid; }
+    .creed-card { break-inside: avoid; page-break-inside: avoid; }
+    .concept-box { break-inside: avoid; page-break-inside: avoid; }
+    .threem-box { break-inside: avoid; page-break-inside: avoid; }
+    .schedule-item { break-inside: avoid; page-break-inside: avoid; }
+    .instructor-section { break-inside: avoid; page-break-inside: avoid; }
+    .footer-box { break-inside: avoid; page-break-inside: avoid; }
+    .format-table tr { break-inside: avoid; page-break-inside: avoid; }
+    .sns-item { break-inside: avoid; page-break-inside: avoid; }
+    .stats-grid { break-inside: avoid; page-break-inside: avoid; }
+    .hero { break-after: page; page-break-after: always; }
+    .section { break-inside: avoid; page-break-inside: avoid; }
+  }
+
+  /* ========== MOBILE OPTIMIZATION ========== */
+  @media (max-width: 480px) {
+    .hero { padding: 36px 16px 36px; }
+    .section { padding: 40px 16px 0; }
+    .sns-section { padding: 40px 16px 0; }
+    .limits-intro { padding: 0 16px; }
+
+    .format-table td { padding: 12px 8px; font-size: 12px; }
+    .format-table td:first-child { width: 30%; font-size: 11px; padding-left: 8px; white-space: normal; }
+
+    .s-time { width: 24%; font-size: 10px; line-height: 1.4; }
+    .s-date { width: 36%; font-size: 11px; padding: 10px 6px 10px 10px; }
+    .label-main { font-size: 12px; }
+    .label-sub { font-size: 10px; }
+
+    .limit-card { margin: 0 16px 12px; }
+    .card-title { font-size: clamp(18px, 5vw, 24px); }
+    .card-desc { font-size: 12px; }
+
+    .creed-title { font-size: 13px; }
+    .creed-body { font-size: 11px; }
+
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-cell { padding: 12px 8px; }
+    .stat-num { font-size: 20px; }
+
+    .sns-item { padding: 14px 12px; gap: 10px; min-height: 56px; }
+    .sns-icon { width: 32px; height: 32px; font-size: 13px; }
+
+    .footer-box { margin: 40px 16px 0; padding: 24px 16px; }
+    .footer-catch { font-size: 16px; }
+  }
+
+  /* ========== MOBILE FINE-TUNING ========== */
+  @media (max-width: 380px) {
+    html { font-size: 14px; }
+    .hero-title { font-size: clamp(42px, 13vw, 60px); }
+    .nav-badge { font-size: 10px; padding: 5px 10px; }
+    .stat-num { font-size: 20px; }
+    .card-title { font-size: 20px; }
+    .creed-card { padding: 14px 12px 14px 14px; gap: 10px; }
+    .s-time { width: 22%; }
+    .s-date { font-size: 10px; }
+    .format-table td:first-child { width: 28%; }
+  }
+</style>
+</head>
+<body style="background-color:#0D0D0D !important;">
+<div class="container">
+
+  <div class="nav no-break">
+    <div>
+      <div class="nav-logo">LIMIT BREAK</div>
+      <div class="nav-sub">3-MONTH INTENSIVE BUSINESS PROGRAM</div>
+    </div>
+    <div class="nav-badge">参加者向け資料</div>
+  </div>
+
+  <div class="hero">
+    <p class="hero-eyebrow">3-Month Intensive Business Program</p>
+    <p class="hero-tagline">新しい自分を取り戻す <span class="gold">Biz</span> プログラム</p>
+    <div class="hero-divider"></div>
+    <div class="hero-title"><div class="limit">LIMIT</div><div class="brake">BREAK</div></div>
+    <p class="hero-catch">あらゆる限界を、ぶち壊せ。</p>
+    <p class="hero-desc">行動・意識・売上・想像・価値・メンタル・ビジネス・覚悟・挑戦——<br>すべての「限界」を３ヶ月で一気にブレイクする、<strong>これまでにない成長プログラム</strong>。</p>
+    <div class="hero-info-box">
+      <div class="label">Organizer</div>
+      <div class="val">Health Guild Inc.</div>
+    </div>
+  </div>
+
+  <!-- ===== CONCEPT ===== -->
+  <div class="section">
+    <p class="sec-eyebrow">Concept</p>
+    <h2 class="sec-title">LIMIT BREAK<br><span class="gold">とは何か</span></h2>
+    <div class="concept-box no-break">
+      <h3>LIMIT BREAK とは</h3>
+      <p>「リミット・ブレイク」——あなたの中に存在するあらゆる限界の壁を、３ヶ月という短期間で根こそぎ壊し、<span class="gold">新しい自分を取り戻す</span>ビジネスプログラムです。</p>
+    </div>
+    <div class="threem-box no-break">
+      <div class="threem-num">3M</div>
+      <div class="threem-title">Short Term Break</div>
+      <div class="threem-body">
+        <p>一般的な講座は、時間をかけて「じわじわ」成長させようとします。</p>
+        <p><span class="white">LIMIT BREAKは違います。</span></p>
+        <p><span class="gold">３ヶ月という短期間に意図的に負荷をかけ</span>、今まで見えていなかった「限界」を一気に突き破る。それが私たちの哲学です。</p>
+        <p>長い年月をかけて積み上がった限界の壁は、<span class="gold">正しいメソッドと覚悟があれば、短期で崩せる</span>。その確信のもとに設計されたプログラムです。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 10 LIMITS ===== -->
+  <div class="divider-diamond page-break-before">◆</div>
+  <div class="section">
+    <div class="limits-intro">
+      <p class="sec-eyebrow">Limits</p>
+      <h3>あなたの中にある<br>10の限界</h3>
+    </div>
+  </div>
+  <div style="height:20px;"></div>
+
+  <div class="limit-card no-break"><div class="card-num">01</div><div class="card-title">行動の限界</div><div class="card-quote">「わかってる。でも、動けない。」</div><div class="card-desc">知識やノウハウは持っている。なのに「できる」に辿り着けない。そのギャップが、あなたを止め続けている。</div></div>
+  <div class="limit-card no-break"><div class="card-num">02</div><div class="card-title">意識の限界</div><div class="card-quote">「やる気が出たら、やろう。」</div><div class="card-desc">モチベーションが上がるのを待っている限り、何も変わらない。「やる気」は結果であって、条件ではない。</div></div>
+  <div class="limit-card no-break"><div class="card-num">03</div><div class="card-title">売上の限界</div><div class="card-quote">「これ以上、値段は上げられない。」</div><div class="card-desc">月商100万円の壁——それは市場の問題ではなく、あなたの「自分に許している上限」の問題。価格とは、自分の価値への自信の表れ。</div></div>
+  <div class="limit-card no-break"><div class="card-num">04</div><div class="card-title">想像の限界</div><div class="card-quote">「自分には、まだ早い。」</div><div class="card-desc">成功を具体的に想像できないから「まだ」と先延ばしにする。本当の壁は、「描けない未来は実現できない」という事実。</div></div>
+  <div class="limit-card no-break"><div class="card-num">05</div><div class="card-title">価値の限界</div><div class="card-quote">「私なんかが、お金をもらっていいのか。」</div><div class="card-desc">あなたの経験や知識には、他の誰かが必要としている価値がある。自分の価値に気づけないことこそが、最大の損失。</div></div>
+  <div class="limit-card no-break"><div class="card-num">06</div><div class="card-title">メンタルの限界</div><div class="card-quote">「うまくいく人は、どこか違う。」</div><div class="card-desc">成功者は特別な人間——そう思い込むことで、挑戦しない自分を正当化していないか。メンタルの壁こそ最も根深い。</div></div>
+  <div class="limit-card no-break"><div class="card-num">07</div><div class="card-title">ビジネスの限界</div><div class="card-quote">「同じことの繰り返しで、先が見えない。」</div><div class="card-desc">行動しているのに成果が出ない。それはビジネスの仕組みではなく、自分のアプローチの仕組みに問題がある。</div></div>
+  <div class="limit-card no-break"><div class="card-num">08</div><div class="card-title">覚悟の限界</div><div class="card-quote">「本気を出したら、できるはず。」</div><div class="card-desc">「本気」を出さないことで、失敗から逃げていないか。覚悟とは、退路を断つことではなく、前に進む決断を下すこと。</div></div>
+  <div class="limit-card no-break"><div class="card-num">09</div><div class="card-title">挑戦の限界</div><div class="card-quote">「失敗したら、どうしよう。」</div><div class="card-desc">不安と恐怖が「考えること」を「行動」より先に立たせる。その構造を壊さない限り、最初の一歩は永遠に踏み出せない。</div></div>
+  <div class="limit-card no-break"><div class="card-num">10</div><div class="card-title">成長の限界</div><div class="card-quote">「自分なりに、やり切っているつもりだけど。」</div><div class="card-desc">「つもり」が最も危険だ。現状に満足した瞬間、成長は止まる。さらなる進化の扉は、その「思い込み」の向こうにある。</div></div>
+
+  <!-- ===== INSTRUCTOR ===== -->
+  <div class="instructor-section page-break-before">
+    <p class="sec-eyebrow">Instructor</p>
+    <h2 class="sec-title">あなたの限界を<br><span class="gold">ぶち壊す</span>講師</h2>
+    <div class="instructor-name">限界突破ビジネスプロデューサー</div>
+    <div class="instructor-name-jp">りょうた</div>
+    <div class="instructor-en">Ryota Yamaguchi</div>
+    <div class="instructor-role">FOUNDER / LEAD INSTRUCTOR</div>
+    <div class="instructor-divider"></div>
+
+    <div class="stats-grid no-break">
+      <div class="stat-cell"><div class="stat-num">14<span>年</span></div><div class="stat-label">指導歴</div></div>
+      <div class="stat-cell"><div class="stat-num">20,000<span>人+</span></div><div class="stat-label">累計指導数</div></div>
+      <div class="stat-cell"><div class="stat-num">2,600<span>以上</span></div><div class="stat-label">受講した講座数</div></div>
+      <div class="stat-cell"><div class="stat-num">4,000<span>万円</span></div><div class="stat-label">自己投資額（15年間）</div></div>
+    </div>
+
+    <p class="profile-text">薬剤師として最年少で管理薬剤師に就任。1年で店舗利益を<span class="gold">2,000万円向上</span>させた実績を持つ。</p>
+    <p class="profile-text">全国で<span class="gold">1,000回以上の講演</span>を行い、延べ20,000人以上の前に立ってきた。15年間で4,000万円を自己投資し、2,600以上の講座を受講。その経験を体系化し、2021年に<span class="gold">Health Guild株式会社</span>を設立。</p>
+    <p class="profile-text">「知識」だけでは人は変わらない——<span class="gold">行動と覚悟が伴ってこそ、限界は壊れる</span>。その信念のもと、LIMIT BREAKを主宰。</p>
+
+    <div class="tags">
+      <span class="tag">薬剤師</span>
+      <span class="tag">経営者</span>
+      <span class="tag">ビジネスメンター</span>
+      <span class="tag">講演家</span>
+      <span class="tag">Health Guild 代表</span>
+    </div>
+  </div>
+
+  <!-- ===== FORMAT ===== -->
+  <div class="section page-break-before">
+    <p class="sec-eyebrow">Format</p>
+    <h2 class="sec-title">プログラム<span class="gold">概要</span></h2>
+    <table class="format-table">
+      <tr class="no-break"><td>期間</td><td>2026年3月〜7月</td></tr>
+      <tr class="no-break"><td>形式</td><td>オンライン（Zoom）<div class="note">※ 卒業合宿のみ対面</div></td></tr>
+<tr class="no-break"><td>オリエンテーション</td><td>3/31（火）21:00〜23:00<div class="note">読書会を同時開催</div></td></tr>
+      <tr class="no-break"><td>本講座</td><td>全14回（各回 約2時間）<div class="note">21:00〜23:00</div></td></tr>
+      <tr class="no-break"><td>特別講座</td><td>健康講座・AI講座（各1時間）</td></tr>
+      <tr class="no-break"><td>読書会</td><td>全3回（各1〜2時間）<div class="note">課題図書をもとにディスカッション</div></td></tr>
+      <tr class="no-break"><td>卒業合宿</td><td>1泊2日・7/4〜5（神戸予定）<div class="note">※ 別途参加費が必要</div></td></tr>
+      <tr class="no-break"><td>対象</td><td>起業準備中〜月商100万円を本気で目指す方</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== SCHEDULE ===== -->
+  <div class="divider-diamond">◆</div>
+  <div class="section">
+    <p class="sec-eyebrow">Schedule</p>
+    <h2 class="sec-title">全日程<span class="gold">スケジュール</span></h2>
+    <p class="schedule-summary">2026年3月〜7月｜体験会・説明会＋オリエンテーション＋本講座14回＋特別講座＋読書会（全3回）＋卒業合宿</p>
+  </div>
+
+  <div style="padding:0 20px;">
+    <div class="schedule-header no-break">
+      <span>Date</span>
+      <span>Time</span>
+      <span>Content</span>
+    </div>
+    <ul style="list-style:none;">
+<li class="schedule-item is-special no-break"><div class="s-date">3/31（火）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">オリエンテーション</span><span class="label-sub">読書会</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">4/2（木）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座①</span></div></li>
+      <li class="schedule-item is-special no-break"><div class="s-date">4/6（月）</div><div class="s-time">21:00〜22:00</div><div class="s-label"><span class="label-main">特別講座</span><span class="label-sub">健康講座</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">4/8（水）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座②</span></div></li>
+      <li class="schedule-item is-special no-break"><div class="s-date">4/13（月）</div><div class="s-time">21:00〜22:00</div><div class="s-label"><span class="label-main">特別講座</span><span class="label-sub">AI講座</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">4/16（木）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座③</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">4/23（木）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座④</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">5/1（金）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座⑤</span></div></li>
+      <li class="schedule-item is-special no-break"><div class="s-date">5/7（木）</div><div class="s-time">21:00〜22:00</div><div class="s-label"><span class="label-main">読書会</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">5/8（金）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座⑥</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">5/14（木）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座⑦</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">5/20（水）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座⑧</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">5/27（水）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座⑨</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">6/3（水）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座⑩</span></div></li>
+      <li class="schedule-item is-special no-break"><div class="s-date">6/5（金）</div><div class="s-time">21:00〜22:00</div><div class="s-label"><span class="label-main">読書会</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">6/10（水）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座⑪</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">6/17（水）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座⑫</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">6/24（水）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座⑬</span></div></li>
+      <li class="schedule-item no-break"><div class="s-date">7/1（水）</div><div class="s-time">21:00〜23:00</div><div class="s-label"><span class="label-main">本講座⑭</span></div></li>
+      <li class="schedule-item is-camp no-break"><div class="s-date">7/4（土）〜<br>7/5（日）</div><div class="s-time">未定</div><div class="s-label"><span class="label-main">卒業合宿</span><span class="label-sub">神戸（予定）</span></div></li>
+    </ul>
+  </div>
+
+  <!-- ===== ORIENTATION ===== -->
+  <div class="divider-diamond">◆</div>
+  <div class="section">
+    <p class="sec-eyebrow">Orientation</p>
+    <h2 class="sec-title">オリエンテーション<br><span class="gold">ガイド</span></h2>
+    <div class="concept-box no-break">
+      <h3>ORIENTATION — プログラム開始前の特別セッション</h3>
+      <p><span class="gold">3月31日（火）21:00〜23:00</span>、本プログラム開始前のオリエンテーションを行います。仲間と初めて顔を合わせ、読書会も同時開催する特別な時間です。以下を必ずご確認ください。</p>
+    </div>
+    <table class="format-table no-break" style="margin-top:16px;">
+      <tr><td>参加方法</td><td>Zoom（URLは別途LINE公式よりご案内します）</td></tr>
+      <tr><td>内容</td><td>・プログラム全体の説明・進め方の確認<br>・参加者全員の自己紹介<br>・目標設定ワーク<br>・13の心得の共有<br>・読書会（課題図書：『原因と結果の法則』）</td></tr>
+      <tr><td>持ち物</td><td>ノート・ペン<br>３ヶ月で達成したい目標（事前に紙に書き出してください）</td></tr>
+      <tr><td>事前準備</td><td>・Zoom の接続テストを事前に実施<br>・課題図書『原因と結果の法則』（サンマーク出版）を準備<br>・LINE公式アカウントへの登録を確認</td></tr>
+    </table>
+  </div>
+
+  <!-- ===== CREED ===== -->
+  <div class="divider-diamond page-break-before">◆</div>
+  <div class="section">
+    <p class="sec-eyebrow">Creed</p>
+    <h2 class="sec-title">13の<span class="gold">心得</span></h2>
+    <p style="font-size:12px; color:#888888; margin-bottom:24px; line-height:1.9;">この講座に参加するにあたり、共に成長するための13の心得を大切にしてください。</p>
+  </div>
+
+  <div style="padding:0 20px;">
+    <div class="creed-card no-break"><div class="creed-num">01</div><div class="creed-content"><div class="creed-title">礼に始まり、礼に終わる。</div><div class="creed-body">私たちは挨拶を大切にする姿勢で信頼される存在で在り続ける。そのために、礼に始まり、礼に終わることを大切にする。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">02</div><div class="creed-content"><div class="creed-title">全員がフラットな関係である。</div><div class="creed-body">誰もが安心安全に成長できる場にするために、どんな肩書きや立場であっても、互いにリスペクトし合い、フラットな関係で在る。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">03</div><div class="creed-content"><div class="creed-title">絶対に否定をしない。</div><div class="creed-body">共に学ぶ仲間の話を決して否定をしない。ただし意見はしても良い。相手を否定する言葉や表現を使わない。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">04</div><div class="creed-content"><div class="creed-title">先に与える。</div><div class="creed-body">私は与えることができる人間である。挨拶・承認・称賛・貢献・気遣い、あらゆる場面で先に与えることを大切にする。与えるとは、目の前の相手が喜ぶ未来を想像することである。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">05</div><div class="creed-content"><div class="creed-title">可能性を潰す言葉を封印する。</div><div class="creed-body">「無理。難しい。でも。だって。できない。」などの自身の可能性を閉ざす言葉を封印する。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">06</div><div class="creed-content"><div class="creed-title">ありがとうを口癖にする。</div><div class="creed-body">私はありがとうを口癖にする。自分自身が幸せな心であれた時、周囲に愛と親切を届けられる。感謝の言葉をたくさん使うことで、自分自身の人生の幸福度を上げることができる。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">07</div><div class="creed-content"><div class="creed-title">「どうやったらできるか？」だけを考える。</div><div class="creed-body">自ら答えを作り出せる人になるために、無意識で「できない」「やったことがないから無理」と考えず、この問いかけを仲間の誰よりも癖にして成長し続けることを信条にする。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">08</div><div class="creed-content"><div class="creed-title">できていることに目を向ける。</div><div class="creed-body">大切な習慣は一つ一つ成果を実感することである。私は自分自身ができていることに目を向けて、一つ一つ自分自身を育てていく。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">09</div><div class="creed-content"><div class="creed-title">知識の数ではなく、できることの数を増やす。</div><div class="creed-body">自身の変化を起こすために、知識の蓄積ではなくできることを増やすことを重視する。できること＝実践して身につけたことだから。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">10</div><div class="creed-content"><div class="creed-title">チームの力で成長する。</div><div class="creed-body">1人ではくじけそうなことでも、チームの力があれば成長を加速させることができる。私はチームの力で成長する。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">11</div><div class="creed-content"><div class="creed-title">積極的に関わる。</div><div class="creed-body">この機会は自らが作るものであることを私は深く理解している。積極的に関わることで最大限の学びと成長を自分自身に与えていく。</div></div></div>
+    <div class="creed-card no-break"><div class="creed-num">12</div><div class="creed-content"><div class="creed-title">アウトプットこそが成長する秘訣である。</div><div class="creed-body">どんなに素晴らしい知識を蓄積した状態で終わっては意味がない。アウトプットこそが成長を加速させる最良の方法であることを私は知っている。</div></div></div>
+    <div class="creed-card creed-last no-break"><div class="creed-num">13</div><div class="creed-content"><div class="creed-title">私は約束を守る。</div><div class="creed-body">私は自らと仲間に対して約束を守る存在で在り続ける。自分との約束を果たせる人が他人との約束を果たせると知っている。そして約束を守れる自分で在ることが、自分にとっても最大の信頼の源であることを知っている。</div></div></div>
+  </div>
+
+  <!-- ===== NOTES ===== -->
+  <div class="section page-break-before">
+    <p class="sec-eyebrow">Notes</p>
+    <h2 class="sec-title">参加に<span class="gold">あたって</span></h2>
+    <ul class="notes-list">
+      <li class="no-break">全日程への参加を強く推奨します。欠席の場合はアーカイブ動画でフォロー可能です。</li>
+      <li class="no-break">講座中は積極的な発言・アウトプットをお願いします。行動こそが最大の学びです。</li>
+      <li class="no-break">読書会参考図書『原因と結果の法則』（サンマーク出版）を事前にご準備ください。</li>
+      <li class="no-break">卒業合宿は<span class="gold">神戸（予定）</span>にて実施予定です。詳細は別途ご案内いたします。<span class="gold">別途参加費</span>が必要となります。</li>
+      <li class="no-break">全講座はZoomにて開催します。安定したインターネット環境をご準備ください。</li>
+    </ul>
+  </div>
+
+  <!-- ===== SNS ===== -->
+  <div class="divider-diamond">◆</div>
+  <div class="sns-section">
+    <p class="sec-eyebrow">Links</p>
+    <h2 class="sec-title">SNS・<span class="gold">公式サイト</span></h2>
+    <div class="sns-grid">
+      <a class="sns-item no-break" href="https://www.health-guild.com/" target="_blank" rel="noopener">
+        <div class="sns-icon">🌐</div>
+        <div class="sns-info"><div class="sns-name">オフィシャルサイト</div><div class="sns-url">https://www.health-guild.com/</div></div>
+        <div class="sns-arrow">›</div>
+      </a>
+      <a class="sns-item no-break" href="https://www.instagram.com/ryota_nontech_pharmacy/" target="_blank" rel="noopener">
+        <div class="sns-icon">📷</div>
+        <div class="sns-info"><div class="sns-name">Instagram</div><div class="sns-url">@ryota_nontech_pharmacy</div></div>
+        <div class="sns-arrow">›</div>
+      </a>
+      <a class="sns-item no-break" href="https://stand.fm/channels/61da9533299c4d50059e9f29" target="_blank" rel="noopener">
+        <div class="sns-icon">🎙</div>
+        <div class="sns-info"><div class="sns-name">StandFM</div><div class="sns-url">stand.fm / りょうた</div></div>
+        <div class="sns-arrow">›</div>
+      </a>
+      <a class="sns-item no-break" href="https://www.facebook.com/ryota.yamaguchi.16" target="_blank" rel="noopener">
+        <div class="sns-icon">📘</div>
+        <div class="sns-info"><div class="sns-name">Facebook</div><div class="sns-url">facebook.com/ryota.yamaguchi.16</div></div>
+        <div class="sns-arrow">›</div>
+      </a>
+      <a class="sns-item no-break" href="https://www.youtube.com/channel/UCxw-HzZJE965Ryk_TPjsXzA" target="_blank" rel="noopener">
+        <div class="sns-icon">▶️</div>
+        <div class="sns-info"><div class="sns-name">YouTube</div><div class="sns-url">限界突破の学校【LIMIT BREAK】</div></div>
+        <div class="sns-arrow">›</div>
+      </a>
+      <a class="sns-item no-break" href="https://guild03ryota.official.ec/" target="_blank" rel="noopener">
+        <div class="sns-icon">🛍</div>
+        <div class="sns-info"><div class="sns-name">BASE（公式ショップ）</div><div class="sns-url">guild03ryota.official.ec</div></div>
+        <div class="sns-arrow">›</div>
+      </a>
+      <a class="sns-item no-break" href="https://lin.ee/FOchVB8q" target="_blank" rel="noopener">
+        <div class="sns-icon">💬</div>
+        <div class="sns-info"><div class="sns-name">LINE公式アカウント</div><div class="sns-url">お問い合わせ・お申し込みはこちら</div></div>
+        <div class="sns-arrow">›</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div style="height:0px;"></div>
+  <div class="footer-box no-break">
+    <p class="footer-catch">あなたの限界を、<br>一緒に壊しに行きましょう。</p>
+    <p class="footer-org">Health Guild Inc. 主宰<br>LIMIT BREAK 2026</p>
+  </div>
+
+</div>
+</body>
+</html>
